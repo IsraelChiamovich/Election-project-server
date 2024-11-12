@@ -14,5 +14,5 @@ const candidateSchema = new Schema<ICandidate>({
   votes: { type: Number, default: 0 },
 });
 
-const Candidate: Model<ICandidate> = model<ICandidate>("Candidate",candidateSchema);
+const Candidate: Model<ICandidate> = model<ICandidate>("Candidate", candidateSchema);
 export default Candidate;

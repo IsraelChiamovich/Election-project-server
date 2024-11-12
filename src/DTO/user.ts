@@ -10,5 +10,5 @@ export interface RegisterDTO extends LoginDTO {
 }
 
 export interface ProfileDto {
-  id:string
+  id: string;
 }

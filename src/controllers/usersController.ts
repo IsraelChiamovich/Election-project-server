@@ -22,7 +22,7 @@ const login = async (req: Request, res: Response) => {
   }
 };
 
-const profile = async (req: Request<any, any, ProfileDto>,res: Response) => {
+const profile = async (req: Request<any, any, ProfileDto>, res: Response) => {
   try {
     const data = await getUserData(req.body);
     res.status(201).json(data);
