@@ -1,7 +1,7 @@
 // src/services/usersService.ts
 
 import User, { IUser } from "../models/user";
-import { RegisterDTO, LoginDTO, ProfileDto } from "../DTO/user";
+import { RegisterDTO, LoginDTO, /*ProfileDto*/ } from "../DTO/user";
 import bcrypt from "bcrypt";
 import Jwt from "jsonwebtoken";
 
@@ -34,13 +34,13 @@ const loginUser = async (userData: LoginDTO): Promise<{ user: IUser; token: stri
   return { user, token };
 };
 
-const getUserData = async (user: ProfileDto) => {
-  try {
-    if (!user.id) throw new Error(`"Missing user data, ${user.id} is required"`);
-    return await User.findById(user.id).lean();
-  } catch (err) {
-    throw new Error("Can't create new user");
-  }
-};
+// const getUserData = async (user: ProfileDto) => {
+//   try {
+//     if (!user.id) throw new Error(`"Missing user data, ${user.id} is required"`);
+//     return await User.findById(user.id).lean();
+//   } catch (err) {
+//     throw new Error("Can't create new user");
+//   }
+// };
 
-export { registerUser, loginUser, getUserData };
+export { registerUser, loginUser, /*getUserData*/ };

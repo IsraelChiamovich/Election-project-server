@@ -1,8 +1,8 @@
 // src/controllers/usersController.ts
 
 import { Request, Response } from "express";
-import { getUserData, loginUser, registerUser } from "../services/usersService";
-import { ProfileDto } from "../DTO/user";
+import { /*getUserData,*/ loginUser, registerUser } from "../services/usersService";
+//import { ProfileDto } from "../DTO/user";
 
 const register = async (req: Request, res: Response) => {
   try {
@@ -22,13 +22,13 @@ const login = async (req: Request, res: Response) => {
   }
 };
 
-const profile = async (req: Request<any, any, ProfileDto>, res: Response) => {
-  try {
-    const data = await getUserData(req.body);
-    res.status(201).json(data);
-  } catch (err) {
-    res.status(400).json((err as Error).message);
-  }
-};
+// const profile = async (req: Request<any, any, ProfileDto>, res: Response) => {
+//   try {
+//     const data = await getUserData(req.body);
+//     res.status(201).json(data);
+//   } catch (err) {
+//     res.status(400).json((err as Error).message);
+//   }
+// };
 
-export { register, login, profile };
+export { register, login, /*profile*/ };
