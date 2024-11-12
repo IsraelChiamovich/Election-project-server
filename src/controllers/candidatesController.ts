@@ -8,7 +8,7 @@ const getCandidates = async (req: Request, res: Response) => {
     const candidates = await getAllCandidates();
     res.json(candidates);
   } catch (error) {
-    res.status(500).json({ message: "Error fetching candidates", error });
+    res.status(500).json((error as Error).message);
   }
 };
 

@@ -8,10 +8,7 @@ export const handleNewVote = async (vote: VoteDto) => {
   try {
     const user = await User.findById(vote.userId);
     if (user?.hasVoted) {
-      return {
-        status: "ERROR",
-        message: "User has already voted",
-      };
+      throw new Error("User has already voted");
     }
 
     await Candidate.findByIdAndUpdate(vote.candidateId, {
