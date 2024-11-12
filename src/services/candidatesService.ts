@@ -40,8 +40,6 @@ export const initDatabase = async () => {
 };
 
 const getAllCandidates = async (): Promise<ICandidate[]> => {
-  console.log("getting all candidates");
-  
   return await Candidate.find();
 };
 

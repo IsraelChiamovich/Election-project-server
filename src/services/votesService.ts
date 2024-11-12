@@ -6,8 +6,6 @@ import { VoteDto } from "../DTO/vote";
 
 export const handleNewVote = async (vote: VoteDto) => {
   try {
-    console.log({vote});
-
     const user = await User.findById(vote.userId);
     if (user?.hasVoted) {
       return {
@@ -27,8 +25,7 @@ export const handleNewVote = async (vote: VoteDto) => {
         votedFor: vote.candidateId,
       },
     });
-    console.log("done");
-    
+
     return {
       status: "DONE",
     };

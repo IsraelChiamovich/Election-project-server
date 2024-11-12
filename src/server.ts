@@ -7,7 +7,7 @@ import { connectDB } from "./config/db";
 import usersRoutes from "./routes/usersRoutes";
 import candidatesRoutes from "./routes/candidatesRoutes";
 import votesRoutes from "./routes/votesRouter";
-import { initDatabase } from "./services/candidatesService";
+// import { initDatabase } from "./services/candidatesService";
 
 dotenv.config();
 
